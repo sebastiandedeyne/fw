@@ -4,6 +4,6 @@ export default class Router {
   }
 
   resolve(path) {
-    return this.routes.find(route => route.path === path);
+    return this.routes.find(route => route.path === path) || {};
   }
 }
