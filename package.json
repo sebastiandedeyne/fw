@@ -4,14 +4,23 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon -x \"node --experimental-modules\" ./app/server.mjs"
+    "dev": "webpack --mode=development && concurrently \"webpack --watch --mode=development\" \"nodemon ./dist/server.js\"",
+    "format": "prettier --write '**/*.js'"
   },
   "dependencies": {
+    "@babel/core": "^7.0.0-rc.2",
+    "@babel/preset-react": "^7.0.0-rc.2",
+    "babel-loader": "^8.0.0-beta",
     "express": "^4.16.3",
-    "nodemon": "^1.18.3",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "react-router": "^4.3.1",
-    "react-router-dom": "^4.3.1"
+    "webpack": "^4.17.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "devDependencies": {
+    "concurrently": "^3.6.1",
+    "nodemon": "^1.18.3",
+    "prettier": "^1.14.2"
   }
 }
